@@ -1,78 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:fillViewport="true"
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:orientation="vertical">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_height="match_parent"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
         android:weightSum="4">
 
         <RelativeLayout
-            android:layout_weight="1"
-            android:background="#ffffff"
             android:layout_width="match_parent"
-            android:layout_height="0dp">
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="#ffffff">
 
             <ImageView
                 android:id="@+id/imglogo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/logo2"
+                android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
-                android:layout_centerHorizontal="true" />
+                android:src="@drawable/logo2" />
         </RelativeLayout>
 
         <RelativeLayout
-            android:layout_weight="3"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_weight="3"
             android:background="#1188e9">
-            <EditText
-                android:id="@+id/edtUser"
-                android:drawableLeft="@drawable/user5"
-                android:focusable="true"
-                android:focusableInTouchMode="true"
-                android:textColor="#ffffff"
-                android:drawableRight="@drawable/delete3"
-                android:backgroundTint="@android:color/background_light"
-                android:layout_marginRight="18dp"
-                android:layout_marginLeft="18dp"
+
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:paddingTop="60dp"
-                android:layout_height="wrap_content" />
-            <EditText
-                android:focusable="true"
-                android:drawableRight="@drawable/delete3"
-                android:drawableLeft="@drawable/password3"
-                android:focusableInTouchMode="true"
-                android:id="@+id/edtPassword"
-                android:inputType="textPassword"
-                android:textColor="#ffffff"
-                android:backgroundTint="@android:color/background_light"
-                android:layout_width="match_parent"
-                android:layout_marginRight="18dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/userLayout"
                 android:layout_marginLeft="18dp"
-                android:layout_below="@id/edtUser"
-                android:paddingTop="40dp"
-                android:layout_height="wrap_content" />
+                android:layout_marginRight="18dp"
+                android:layout_marginTop="60dp"
+                >
+
+                <EditText
+                    android:id="@+id/edtUser"
+                    android:layout_width="match_parent"
+                    android:hint="@string/hintUser"
+                    android:textColorHint="#de8eea"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@android:color/background_light"
+                    android:drawableLeft="@drawable/user5"
+                    android:textColor="#ffffff" />
+                <ImageButton
+                    android:id="@+id/btnDeleteUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/delete3"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"/>
+            </RelativeLayout>
+
+
+
+            <RelativeLayout
+                android:id="@+id/passLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/userLayout"
+                android:layout_marginLeft="18dp"
+                android:layout_marginRight="18dp"
+                android:layout_marginTop="57dp">
+
+                <EditText
+                    android:id="@+id/edtPassword"
+                    android:hint="@string/hintPass"
+                    android:textColorHint="#de8eea"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@android:color/background_light"
+                    android:drawableLeft="@drawable/password3"
+                    android:inputType="textPassword"
+                    android:textColor="#ffffff" />
+
+                <ImageButton
+                    android:id="@+id/btnDeletePass"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:background="@drawable/delete3"
+                    android:layout_centerVertical="true"
+                    />
+            </RelativeLayout>
+
             <Button
                 android:id="@+id/btnLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Đăng nhập"
-                android:textColor="#ffffff"
-                android:background="@drawable/custom_button"
-                android:layout_below="@+id/edtPassword"
-
+                android:layout_below="@+id/passLayout"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-                android:layout_marginTop="23dp" />
+                android:layout_marginTop="23dp"
+                android:background="@drawable/custom_button"
+                android:text="Đăng nhập"
+                android:textColor="#ffffff" />
 
         </RelativeLayout>
     </LinearLayout>
